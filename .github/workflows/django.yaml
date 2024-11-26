@@ -25,3 +25,13 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+    - name: 'Docker Hub Upload'
+      env:
+        NAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        REPO: 'kiel0103/2024-ecr-python-test'
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker buildx build -t $REPO .
+        docker tag $REPO:latest $NAME/$REPO:$IMAGE_TAG
+        docker push $NAME/$REPO:$IMAGE_TAG
