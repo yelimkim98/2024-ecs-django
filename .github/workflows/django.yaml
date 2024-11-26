@@ -1,4 +1,3 @@
-
 on:
   push:
     branches: ['main']
@@ -46,3 +45,7 @@ jobs:
         role-to-assume: 'arn:aws:iam::484907495106:role/django-role'
         role-session-name: 'blablaWhatIWant'
         aws-region: 'ap-northeast-2'
+    
+    - name: 'ECR에 로그인'
+      id: 'login-ecr'
+      uses: 'aws-actions/amazon-ecr-login@v2'
