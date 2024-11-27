@@ -2,7 +2,7 @@
     "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:484907495106:task-definition/ecs-django:3",
     "containerDefinitions": [
         {
-            "name": "containerName",
+            "name": "ecs-django",
             "cpu": 0,
             "portMappings": [
                 {
