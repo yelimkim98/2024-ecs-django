@@ -53,14 +53,14 @@ jobs:
     
     - name: 'push된 이미지로 ECS Task Definition revision 생성'
       id: 'task-def'
-      uses: 'aws-actions/amazon-ecs-render-task-defination@v1'
+      uses: 'aws-actions/amazon-ecs-render-task-definition@v1'
       with:
         task-definition: ${{ env.ECS_TASK_DEFINITION }}
         container-name: ${{ env.CONTAINER_NAME }}
         image: ${{ steps.build-image.outputs.image }}
     
-    - name: 'Deploy ECS Task Defination'
-      uses: 'aws-actions/amazon-ecs-deploy-task-defination@v2'
+    - name: 'Deploy ECS Task Definition'
+      uses: 'aws-actions/amazon-ecs-deploy-task-definition@v2'
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE_NAME }}
