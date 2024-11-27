@@ -12,7 +12,7 @@ env:
   ECS_TASK_DEFINITION: './ecs-task-definition.json'
   # ecs-task-definition.json 의 containerDefinitions.name 에 지정한 값과 일치해야함
   # 이거 기존에 배포된 컨테이너들에서 이름 바뀌면 직전꺼 킬을 못하는듯?
-  CONTAINER_NAME: 'test-container'
+  CONTAINER_NAME: 'djangoecs'
   ECS_SERVICE_NAME: 'test-service'
   ECS_CLUSTER_NAME: 'django-ecs'
 
