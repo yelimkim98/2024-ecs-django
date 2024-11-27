@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:484907495106:task-definition/ecs-django:3",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:484907495106:task-definition/ecs-django:7",
     "containerDefinitions": [
         {
             "name": "test-container",
@@ -15,20 +15,24 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "systemControls": []
         }
     ],
     "family": "ecs-django",
     "executionRoleArn": "arn:aws:iam::484907495106:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 7,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
@@ -50,7 +54,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-11-26T08:14:45.595Z",
-    "registeredBy": "arn:aws:iam::484907495106:root",
+    "registeredAt": "2024-11-27T02:19:53.263Z",
+    "registeredBy": "arn:aws:sts::484907495106:assumed-role/django-role/blablaWhatIWant",
     "tags": []
 }
